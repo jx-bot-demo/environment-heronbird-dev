@@ -1,0 +1,10 @@
+adminUser:
+  password: local:heronbird/adminUser:password
+  username: admin
+enableDocker: false
+pipelineUser:
+  email: bl1@nclasters.org
+  token: local:heronbird/pipelineUser:token
+  username: jx-bot-demo
+prow:
+  hmacToken: local:heronbird/prow:hmacToken
