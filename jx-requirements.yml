@@ -6,7 +6,6 @@ cluster:
   clusterName: heronbird
   devEnvApprovers:
   - brentlaster
-  - jx-bot-demo
   environmentGitOwner: jx-bot-demo
   environmentGitPublic: true
   gitKind: github
@@ -19,7 +18,7 @@ cluster:
   zone: us-east1-b
 environments:
 - ingress:
-    domain: 34.74.37.199.nip.io
+    domain: 35.243.216.55.nip.io
     externalDNS: false
     namespaceSubDomain: -jx.
     tls:
@@ -27,7 +26,7 @@ environments:
       enabled: false
       production: false
   key: dev
-  repository: environment-heronbird-dev
+  repository: environment-jx-gke-dev
 - ingress:
     domain: ""
     externalDNS: false
@@ -37,7 +36,7 @@ environments:
       enabled: false
       production: false
   key: staging
-  repository: environment-heronbird-staging
+  repository: environment-jx-gke-staging
 - ingress:
     domain: ""
     externalDNS: false
@@ -47,10 +46,10 @@ environments:
       enabled: false
       production: false
   key: production
-  repository: environment-heronbird-production
+  repository: environment-jx-gke-production
 gitops: true
 ingress:
-  domain: 34.74.37.199.nip.io
+  domain: ""
   externalDNS: false
   namespaceSubDomain: -jx.
   tls:
@@ -81,3 +80,8 @@ versionStream:
   ref: v1.0.557
   url: https://github.com/jenkins-x/jenkins-x-versions.git
 webhook: prow
+buildPacks:
+  buildPackLibrary:
+    name: "Custom Pack"
+    gitURL: "github.com/brentlaster/jenkins-x-kubernetes"
+    gitRef: "master"
